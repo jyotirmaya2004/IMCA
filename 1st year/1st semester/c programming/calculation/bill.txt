@@ -1,0 +1,13 @@
+--------- Bill Receipt ---------
+Customer Name: Jyotirmaya
+Date: Fri Feb 14 10:11:46 2025
+Item Name	Price	Quantity	Total
+----------------------------------------
+Rice		34.00	1		34.00
+----------------------------------------
+Subtotal: 34.00
+Discount: 1.00
+Tax: 1.00
+Total Amount to Pay: 34.00
+----------------------------------------
+Thank you for shopping with us!

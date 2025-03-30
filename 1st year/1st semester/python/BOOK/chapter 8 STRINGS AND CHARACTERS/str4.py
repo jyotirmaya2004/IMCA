@@ -1,0 +1,33 @@
+#slicing the string
+s1="Welcome to 'Python' Programming"
+print(s1)
+#slice the string
+print(s1[0:5])
+print(s1[5:10])
+print(s1[10:15])
+print(s1[15:20])
+print(s1[20:25])
+print(s1[25:30])
+print(s1[30:35])
+print(s1[35:44])
+#slice the string with step
+print(s1[0:10:2])
+print(s1[0:10:3])
+print(s1[0:10:4])
+print(s1[0:10:5])
+print(s1[0:10:6])
+print(s1[0:10:7])
+print(s1[0:10:8])
+print(s1[0:10:9])
+print(s1[0:10:10])
+#slice the string with negative index
+print(s1[-1:-10:-1])
+print(s1[-1:-10:-2])
+print(s1[-1:-10:-3])
+print(s1[-1:-10:-4])
+print(s1[-1:-10:-5])
+print(s1[-1:-10:-6])
+print(s1[-1:-10:-7])
+print(s1[-1:-10:-8])
+print(s1[-1:-10:-9])
+print(s1[-1:-10:-10])

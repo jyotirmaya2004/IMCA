@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Text Input Formats in HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>All Text Input Formats in HTML</h1>
+    <div class="container">
+        <form action="/submit-form" method="post">
+            <!-- Single-line Text Input -->
+            <label for="name">1. Single-line Text Input:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <!-- Password Input -->
+            <label for="password">2. Password Input:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+
+            <!-- Email Input -->
+            <label for="email">3. Email Input:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <!-- Number Input -->
+            <label for="age">4. Number Input:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120">
+
+            <!-- Telephone Input -->
+            <label for="phone">5. Telephone Input:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <!-- URL Input -->
+            <label for="website">6. URL Input:</label>
+            <input type="url" id="website" name="website" placeholder="Enter your website URL">
+
+            <!-- Search Input -->
+            <label for="search">7. Search Input:</label>
+            <input type="search" id="search" name="search" placeholder="Search...">
+
+            <!-- Multi-line Text Input (Textarea) -->
+            <label for="message">8. Multi-line Text Input (Textarea):</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
+
+            <!-- Date Input -->
+            <label for="dob">9. Date Input:</label>
+            <input type="date" id="dob" name="dob">
+
+            <!-- Time Input -->
+            <label for="time">10. Time Input:</label>
+            <input type="time" id="time" name="time">
+
+            <!-- DateTime-Local Input -->
+            <label for="datetime">11. DateTime-Local Input:</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+
+            <!-- Month Input -->
+            <label for="month">12. Month Input:</label>
+            <input type="month" id="month" name="month">
+
+            <!-- Week Input -->
+            <label for="week">13. Week Input:</label>
+            <input type="week" id="week" name="week">
+
+            <!-- Color Input -->
+            <label for="color">14. Color Input:</label>
+            <input type="color" id="color" name="color">
+
+            <!-- Range Input -->
+            <label for="range">15. Range Input:</label>
+            <input type="range" id="range" name="range" min="0" max="100">
+
+            <!-- File Input -->
+            <label for="file">16. File Input:</label>
+            <input type="file" id="file" name="file">
+
+            <!-- Hidden Input -->
+            <input type="hidden" id="hidden" name="hidden" value="This is a hidden field">
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery Store Inventory</h1>
+        
+        <div class="form-section">
+            <h2>Add Product</h2>
+            <input type="text" id="productName" placeholder="Product Name">
+            <input type="number" id="productQuantity" placeholder="Quantity">
+            <input type="number" id="productPrice" placeholder="Price">
+            <button onclick="addProduct()">Add Product</button>
+        </div>
+
+        <div class="form-section">
+            <h2>Import Stock</h2>
+            <input type="text" id="importName" placeholder="Product Name">
+            <input type="number" id="importQuantity" placeholder="Quantity">
+            <button onclick="importStock()">Import Stock</button>
+        </div>
+
+        <div class="form-section">
+            <h2>Sell Product</h2>
+            <input type="text" id="sellName" placeholder="Product Name">
+            <input type="number" id="sellQuantity" placeholder="Quantity">
+            <button onclick="sellProduct()">Sell Product</button>
+        </div>
+
+        <h2>Product Inventory</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

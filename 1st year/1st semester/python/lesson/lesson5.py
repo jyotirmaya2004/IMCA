@@ -1,0 +1,15 @@
+name="Jyotirmaya Behera \n"
+age=54
+print(len(name))
+print(name.capitalize())
+print(name.upper())
+print(name.lower())
+print(name.isdigit())
+print(name.isalpha())
+print(name.isascii())
+print(name.count("e"))
+print(name.replace("e","a"))
+print(name*10)
+# print(name.)
+# print(name.)
+# print(name.)

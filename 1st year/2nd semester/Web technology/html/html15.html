@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Select and Choose-Like Input Formats in HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>All Select and Choose-Like Input Formats in HTML</h1>
+    <div class="container">
+        <form action="/submit-form" method="post">
+            <!-- Dropdown (Select) -->
+            <label for="country">1. Dropdown (Select):</label>
+            <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="australia">Australia</option>
+            </select><br><br>
+
+            <!-- Multi-Select Dropdown -->
+            <label for="languages">2. Multi-Select Dropdown:</label>
+            <select id="languages" name="languages" multiple>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+            </select><br><br>
+
+            <!-- Radio Buttons -->
+            <label>3. Radio Buttons:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br><br>
+
+            <!-- Checkboxes -->
+            <label>4. Checkboxes:</label><br>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">Subscribe to newsletter</label><br>
+            <input type="checkbox" id="terms" name="terms" value="accepted">
+            <label for="terms">I accept the terms and conditions</label><br><br>
+
+            <!-- Datalist (Autocomplete) -->
+            <label for="browser">5. Datalist (Autocomplete):</label>
+            <input list="browsers" id="browser" name="browser" placeholder="Choose or type a browser">
+            <datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Safari">
+                <option value="Edge">
+                <option value="Opera">
+            </datalist><br><br>
+
+            <!-- Range Input -->
+            <label for="volume">6. Range Input:</label>
+            <input type="range" id="volume" name="volume" min="0" max="100"><br><br>
+
+            <!-- Color Picker -->
+            <label for="color">7. Color Picker:</label>
+            <input type="color" id="color" name="color"><br><br>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>

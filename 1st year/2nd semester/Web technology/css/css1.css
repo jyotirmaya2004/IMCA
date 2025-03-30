@@ -1,0 +1,14 @@
+h1{
+    color: rgba(237, 7, 122, 0.968);
+}
+p{
+    color: deeppink;
+}
+button{
+    color: blue;
+}
+body{
+    background-image: 
+    url("caleb-white-PLfzwAmflos-unsplash.jpg"), ;
+    background-size: cover;
+}
