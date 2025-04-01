@@ -41,10 +41,9 @@ int main()
         }
         insert(num2,pos-1);
 
+        printf("\nDisplay linked list element (after insertion): ");
+        display(first);
     }
-    
-    printf("\nDisplay linked list element (after insertion): ");
-    display(first);
 }
 void insert(int num,int pos)
 {
