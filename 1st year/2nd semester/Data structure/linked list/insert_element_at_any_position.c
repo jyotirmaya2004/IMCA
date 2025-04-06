@@ -1,4 +1,4 @@
-//insert at first position
+//insert at any position
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct single_linked_list

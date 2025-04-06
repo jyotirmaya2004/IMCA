@@ -53,7 +53,7 @@ void sort_list(sll *head)
 	{
 		for(j = i->next; j != NULL; j = j->next)
 		{
-			if(i->data > j->data)
+			if(i->data < j->data)
 			{
 				temp = i->data;
 				i->data = j->data;
