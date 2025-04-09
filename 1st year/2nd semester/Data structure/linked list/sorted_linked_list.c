@@ -40,3 +40,27 @@ void display(sll* node)
 		node=node->next;
 	}
 }
+void freelist(sll* head) {
+    sll* temp;
+    while (head != NULL) {
+        temp = head;
+        head = head->next;
+        free(temp);
+    }
+	printf("\nMemory clear succesfully");
+}
+int main()
+{
+	int n;
+	printf("Enter number of linked list element : ");
+	scanf("%d",&n);
+	sll *first=NULL;
+	for (int i = 0; i < n; i++)
+	{
+		create(&first);
+	}
+	printf("\nDisplay linked list element : ");
+	display(first);
+	freelist(first);
+
+}
