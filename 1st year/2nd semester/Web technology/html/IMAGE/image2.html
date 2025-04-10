@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Client-Side Image Mapping</title>
+</head>
+<body>
+	<h1>Client-Side Image Mapping Example</h1>
+	<p>Click on different parts of the image to navigate to different links:</p>
+	<img src="diego-ph-VbAX4dhmhP8-unsplash.jpg" alt="My Image" usemap="#image-map" width="600" height="400">
+
+	<map name="image-map">
+		<area shape="rect" coords="50,50,200,200" href="rectangle.html" alt="Section 1" title="rectangle">
+		<area shape="circle" coords="300,150,75" href="circle.html" alt="Section 2" title="circle">
+		<area shape="poly" coords="400,300,450,350,500,300,450,250" href="poly.html" alt="Section 3" title="polygon">
+	</map>
+</body>
+</html></map>
