@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Table</title>
+	<script>
+		function calculateGrandTotal() {
+			let table = document.querySelector("table tbody");
+			let rows = table.querySelectorAll("tr");
+			let grandTotal = 0;
+
+			rows.forEach(row => {
+				let amountCell = row.cells[3]; // 4th column (Amount)
+				let amount = parseFloat(amountCell.textContent.replace(/₹|,/g, ''));
+				grandTotal += amount;
+			});
+
+			// Update the grand total in the tfoot
+			let grandTotalCell = document.querySelector("table tfoot tr td:last-child");
+			grandTotalCell.textContent = `₹${grandTotal.toFixed(2)}`;
+		}
+
+		window.onload = calculateGrandTotal;
+	</script>
+</head>
+<body>
+	<table border="1">
+		<caption>Product table</caption>
+		<thead>
+			<tr>
+				<th><label for="product-item">Product item</label></th>
+				<th><label for="product-price">Product price</label></th>
+				<th><label for="quantity">Quantity</label></th>
+				<th><label for="amount">Amount</label></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Mobile phone</td>
+				<td>₹10000.00</td>
+				<td>2</td>
+				<td>₹20000.00</td>
+			</tr>
+			<tr>
+				<td>Charger</td>
+				<td>₹300.00</td>
+				<td>2</td>
+				<td>₹600.00</td>
+			</tr>
+			<tr>
+				<td>Headphones</td>
+				<td>₹1500.00</td>
+				<td>1</td>
+				<td>₹1500.00</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Grand total</td>
+				<td>₹0.00</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>
