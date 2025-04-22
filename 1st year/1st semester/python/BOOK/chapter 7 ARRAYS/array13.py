@@ -10,6 +10,6 @@ print("Enter element to search : ",end="")
 s=int(input())
 try:
     pos=x.index(s)
-    print("Fouons at position ",pos+1)
+    print("Founds at position ",pos+1)
 except ValueError:
     print("Not found")
