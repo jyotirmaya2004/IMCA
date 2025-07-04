@@ -1,0 +1,42 @@
+/* pseudo classes--*/
+a:hover{
+	color:red;
+	text-decoration: none;
+}
+input:focus{
+	border: 2px solid rgb(15, 15, 15);
+}
+li:first-child{
+	color:green;
+}
+li:last-child{
+	font-weight: bold;
+}
+li:nth-child(2)
+{
+	color: orange;
+}
+p:not(.highlight)
+{
+	background-color: #daa51f;
+}
+h1::before{
+	content: "👉";
+}
+h1::after{
+	content: "👈";
+}
+p::first-letter{
+	font-size: 200%;
+	color:blue;
+}
+p::first-line{
+	text-decoration:none;
+}
+input::placeholder{
+	color: aqua;
+	font-style: italic;
+}
+li::marker{
+	content: "👈";
+}

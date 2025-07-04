@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p><label>Favorite Dog: <input type="text" list="dogs"></label></p>
+<datalist id="dogs">
+    <option>Angus</option>
+    <option>Tucker</option>
+    <option>Cisco</option>
+    <option>Sabrina</option>
+</datalist>
+<label>Search:<input type="search" name="query"
+	id="searchBox" autofocus></label>
+<br>
+<br>
+<label>Name :
+	<input type="text" name="firstname" id="firstname"
+	placeholder="Enter your name here" autocomplete>
+</label>
+<br>
+<br>
+<menu type="list" id="oldStyle">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+</menu>
+<menu type="toolbar" id="fileMenu" label="File">
+	<li><a href="javascript:newItem();">New</a></li>
+	<li><a href="javascript:openItem();">Open</a></li>
+	<li><a href="javascript:closeItem();">Close</a></li>
+	<hr>
+	<li><a href="javascript:saveItem();">Save</a></li>
+	<li><a href="javascript:saveAsItem();">Save as...</a></li>
+	<hr>
+	<li><a href="javascript:exitApp();">Exit</a></li>
+</menu>
+</body>
+</html>

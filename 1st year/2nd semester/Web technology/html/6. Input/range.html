@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type="range" name="range" max="100" min="1" step="5">
+	<br>
+	<br>
+	<p><label>range (1-100 step 5):
+		<input type="range" name="range" max="100" min="1" step="5">
+		</label></p>
+		<p><label>range (-1000-1000 step 100):
+		<input type="range" name="range" max="1000" min="-1000" step="100">
+		</label></p>
+		<label>Text area: (spellcheck on) <textarea name="comments"
+			spellcheck="true">There is a tyyypooo here.  Did the browser spot it?
+			</textarea></label>
+			<br>
+			<div itemscope>
+				Dog's Name: <span itemprop="name">Angus</span><br>
+				Dog's Age: <span itemprop="age">7</span><br>
+				Dog's Birthday: <time itemprop="birthday" datetime="2004-07-22">July 22</time><br>
+				Dog's Picture: <img itemprop="picture" src="angus.jpg"><br>
+				  <meta itemprop="entryID" content="498274">
+				Current Points: <br>
+				<div itemprop="points" itemscope>
+				Appearance: <span itemprop="appearance">10</span><br>
+				Obedience: <span itemprop="obedience">8</span><br>
+				Talent: <span itemprop="talent">7.5</span><br>
+				</div>
+				</div>
+</body>
+</html>

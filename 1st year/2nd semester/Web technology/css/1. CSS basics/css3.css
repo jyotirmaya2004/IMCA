@@ -1,0 +1,24 @@
+div{
+	height: 100;
+	width:100;
+	background-color: rgb(153, 205, 21);
+	/* border-style: solid;
+	border-color: blueviolet; */
+	border:3 solid blueviolet;
+	border-radius: 12px;
+	padding-left: 30;
+
+	padding-right: 30;
+	margin-left: 100;
+	text-align: center;
+	border-width: 1;
+}
+h1{
+	width:150;
+	background-color: rgb(22, 236, 118);
+	border-style: dashed;
+	border-color: blueviolet;
+	border-width: 3;
+	text-align: center;
+
+}

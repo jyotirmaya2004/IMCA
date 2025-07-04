@@ -1,0 +1,223 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>First css</title>
+	<style>
+		h1{
+			color:blue;
+		}
+		h1:hover{
+			color:red;
+		}
+		td{
+			color: blueviolet;
+		}
+		td:hover{
+			color:red;
+		}
+		th:hover{
+			color: rgb(241, 49, 5);
+		}
+		h2{
+			color: darkblue;
+		}
+		h2:hover{
+			color:red;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Jyotirmaya Behera</h1>
+	<table border="1">
+		<tr>
+			<th>S no.</th>
+			<th>Name</th>
+			<th>Mark</th>
+		</tr>
+		<tr>
+			<td>1.</td>
+			<td>Jyotirmaya Behera</td>
+			<td>450</td>
+		</tr>
+		<tr>
+			<td>2.</td>
+			<td>Malay Krushna Pradhan</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td>3.</td>
+			<td>Manas Ranjan Das</td>
+			<td>400</td>
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<h2>Login Page</h2>
+	<br>
+	<h4>Login Id : </h4><input type="text" placeholder="Enter login id">
+	<br>
+	<h4>password : </h4><input type="password" placeholder="Enter password">
+	<br> <br><br>
+	<form action="#">
+		<div>
+		  <label for="range">Range: </label>
+		  <input type="range" name="volume" min="0" max="100" value="80" />
+		</div>
+		<br />
+		<div>
+		  <label for="birthdate">birthdate: </label>
+		  <input type="date" name="birthdate" />
+		</div>
+
+		<br />
+		<div>
+		  <label for="appointmentTime">appointmentTime: </label>
+		  <input type="time" name="appointmentTime" />
+		</div>
+
+		<br />
+		<div>
+		  <label for="favoriteColor">favoriteColor: </label>
+		  <input type="color" name="favoriteColor" />
+		</div>
+
+		<br />
+		<div>
+		  <label for="website">website: </label>
+		  <input type="url" name="website" placeholder="Enter website URL" />
+		</div>
+
+		<br />
+		<div>
+		  <label for="searchQuery">searchQuery: </label>
+		  <input type="search" name="searchQuery" placeholder="Search..." />
+		</div>
+
+		<br />
+		<div>
+		  <label for="expiryDate">Month & Year: </label>
+		  <input type="month" name="expiryDate" />
+		</div>
+
+		<br />
+		<div>
+		  <label for="week">vacationWeek: </label>
+		  <input type="week" name="vacationWeek" />
+		</div>
+		<br>
+		<div>
+			<label for="document">Document : </label>
+			<input type="file" name="uploadfile" />
+		</div>
+		<br>
+		<div>
+			<label for="submit">Do you want to submit ? </label>
+			<input type="radio" name="wanttosubmit" value="yes" />yes
+			<input type="radio" name="wanttosubmit" value="no" />no
+		</div>
+		<br>
+		<div>
+			<label for="submit">Submit : </label>
+			<input type="submit" name="submit" />
+		</div>
+		<br>
+	  </form>
+	  <br />
+	  <form action="#">
+		<label for="email">Enter Your Email: </label>
+		<input
+		  type="email"
+		  placeholder="enter your email"
+		  name="email"
+		  required
+		  autocomplete="off"
+		  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+		  size="30"
+		  value="thapa@thech.com"
+		  readonly
+		  disabled
+		/>
+		<br />
+		<input type="submit" value="Login" />
+	  </form>
+	  <h1>HTML FORM</h1>
+	  <!-- Add Form Here -->
+	  <form>
+		<div>
+		  <label for="password">Password</label>
+		  <input
+			type="password"
+			id="password"
+			class="sameclass"
+			placeholder="Enter your password"
+		  />
+		</div>
+		<div>
+		  <label for="number">max subject</label>
+		  <input
+			type="number"
+			class="sameclass"
+			id="number"
+			max="5"
+			min="1"
+			value="1"
+		  />
+		</div>
+		<div>
+		  <label for="gender">Gender</label>
+		  <input type="radio" name="gender" value="male" /> Male
+		  <input type="radio" name="gender" value="female" /> Female
+		</div>
+
+		<div>
+		  <label for="hobbies"> Fav Hobbies: </label>
+		  <input type="checkbox" name="interest" value="music" /> Music
+		  <input type="checkbox" name="interest" value="sports" /> Sports
+		</div>
+
+		<div>
+		  <label for="country">Fav Country: </label>
+		  <select name="country" id="country">
+			<option value="usa">USA</option>
+			<option value="canada">Canada</option>
+			<option value="uk">UK</option>
+		  </select>
+		</div>
+
+		<div>
+		  <label for="country">Select a Country:</label>
+		  <input type="text" id="country" name="country" list="countries" />
+		  <datalist id="countries">
+			<option value="usa">USA</option>
+			<option value="canada">Canada</option>
+			<option value="uk">UK</option>
+		  </datalist>
+		</div>
+
+		<div>
+		  <label for="comment"> Message Us: </label>
+		  <textarea
+			name="comments"
+			rows="10"
+			cols="100"
+			placeholder="Enter your comments"
+		  ></textarea>
+		</div>
+
+		<div>
+		  <label for="file">Select File</label>
+		  <input type="file" name="fileUpload" />
+		</div>
+
+		<input type="submit" value="Submit" />
+		<!-- or -->
+		<button type="submit">Submit</button>
+	  </form>
+
+
+
+</body>
+</html>

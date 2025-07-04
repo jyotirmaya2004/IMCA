@@ -1,0 +1,68 @@
+/*1. LINK STATES*/
+a:link{
+	color: blueviolet;
+	text-decoration: solid;
+}
+a:visited{
+	color:pink;
+}
+a:hover{
+	color: orange;
+}
+a:active{
+	color:red;
+}
+/*2. Focus state*/
+input:focus{
+	border: 3px dotted rgba(244, 5, 208, 0.952);
+	background-color: #acafb2;
+}
+/*3. Checked */
+input[type="checkbox"]:checked +label,input[type="radio"]:checked +label{
+	font-weight: bold;
+	color: green;
+}
+/* 4. Disabled and Enabled */
+input:disabled{
+	background-color: #ccc;
+}
+input:enabled{
+	border: 1px solid green;
+}
+/* 5.Required and Optional */
+input:requird{
+	border: 2px solid red;
+}
+input:optional{
+	border: 2px dashed gray;
+}
+/* 6. valid and Invalid */
+input:valid{
+	background-color: #dfffdf;
+}
+input:invalid{
+	background-color: #ffdede;
+}
+/*7. Structural pseudo classes*/
+ul li:first-child{
+	color:green;
+}
+ul li:last-child{
+	color:blue;
+}
+ul li:nth-last-child(2){
+	background-color: yellow;
+	width: 90;
+}
+p:empty{
+	border: 1px dashed black;
+	height: 20px;
+	margin-bottom: 10px;
+	color: brown;
+}
+div:only-child{
+	color:red;
+}
+p:not(.special){
+	font-style: italic;
+}

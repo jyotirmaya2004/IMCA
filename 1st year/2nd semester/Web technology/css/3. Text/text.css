@@ -1,0 +1,25 @@
+.text-demo{
+	color:#333;
+	text-align:justify;
+	text-decoration: underline red dashed;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	word-spacing: 4px;
+	line-height: 2;
+	text-indent: 50px;
+	direction: ltr;
+	unicode-bidi: normal;
+	white-space: normal;
+	text-shadow: 2px 2px 5px rgb(29, 134, 254);
+	vertical-align: normal;
+	text-overflow: ellipsis;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	writing-mode: horizontal-tb;
+	overflow: hidden;
+	padding: 10px;
+	border: 3px solid red;
+	border-radius: 5px;
+	background: yellowgreen;
+
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ludo board</title>
+	<link rel="stylesheet" href="ludo.css">
+</head>
+<body>
+	<div class="ludo-board">
+		<div class="center"></div>
+		<!-- Home areas -->
+		<div class="home home-red"></div>
+		<div class="home home-green"></div>
+		<div class="home home-yellow"></div>
+		<div class="home home-blue"></div>
+		<!-- Starting cells -->
+		 <div class="starting-cell red1"></div>
+		 <div class="starting-cell red2"></div>
+		 <div class="starting-cell red3"></div>
+		 <div class="starting-cell red4"></div>
+
+		 <div class="starting-cell green1"></div>
+		 <div class="starting-cell green2"></div>
+		 <div class="starting-cell green3"></div>
+		 <div class="starting-cell green4"></div>
+
+		 <div class="starting-cell yellow1"></div>
+		 <div class="starting-cell yellow2"></div>
+		 <div class="starting-cell yellow3"></div>
+		 <div class="starting-cell yellow4"></div>
+
+		 <div class="starting-cell blue1"></div>
+		 <div class="starting-cell blue2"></div>
+		 <div class="starting-cell blue3"></div>
+		 <div class="starting-cell blue4"></div>
+
+		 <!-- common path cell
+		  top-horizontal path -->
+		<div class="cell" style="top:2px;left:200px;"></div>
+		<div class="cell" style="top:37px;left:200px;"></div>
+		<div class="cell safe" style="top:72px;left:200px;"></div>
+		<div class="cell" style="top:107px;left:200px;"></div>
+		<div class="cell" style="top:142px;left:200px;"></div>
+		<div class="cell" style="top:177px;left:200px;"></div>
+
+		<div class="cell arrowg" style="top:2px;left:235px;"></div>
+		<div class="cell green" style="top:37px;left:235px;"></div>
+		<div class="cell green" style="top:72px;left:235px;"></div>
+		<div class="cell green" style="top:107px;left:235px;"></div>
+		<div class="cell green" style="top:142px;left:235px;"></div>
+		<div class="cell green" style="top:177px;left:235px;"></div>
+
+		<div class="cell" style="top:2px;left:270px;"></div>
+		<div class="cell green home" style="top:37px;left:270px;"></div>
+		<div class="cell" style="top:72px;left:270px;"></div>
+		<div class="cell" style="top:107px;left:270px;"></div>
+		<div class="cell" style="top:142px;left:270px;"></div>
+		<div class="cell" style="top:177px;left:270px;"></div>
+		<!-- right-vertical path -->
+		<div class="cell arrowb" style="top:233px;right:2px;"></div>
+		<div class="cell blue" style="top:233px;right:37px;"></div>
+		<div class="cell blue" style="top:233px;right:72px;"></div>
+		<div class="cell blue" style="top:233px;right:107px;"></div>
+		<div class="cell blue" style="top:233px;right:142px;"></div>
+		<div class="cell blue" style="top:233px;right:177px;"></div>
+
+		<div class="cell" style="top:268px;right:2px;"></div>
+		<div class="cell blue home" style="top:268px;right:37px;"></div>
+		<div class="cell" style="top:268px;right:72px;"></div>
+		<div class="cell" style="top:268px;right:107px;"></div>
+		<div class="cell" style="top:268px;right:142px;"></div>
+		<div class="cell" style="top:268px;right:177px;"></div>
+
+		<div class="cell" style="top:198px;right:2px;"></div>
+		<div class="cell" style="top:198px;right:37px;"></div>
+		<div class="cell safe" style="top:198px;right:72px;"></div>
+		<div class="cell" style="top:198px;right:107px;"></div>
+		<div class="cell" style="top:198px;right:142px;"></div>
+		<div class="cell" style="top:198px;right:177px;"></div>
+		<!-- bottom horizontal path -->
+		<div class="cell" style="bottom:2px;left:200px;"></div>
+		<div class="cell yellow home" style="bottom:37px;left:200px;"></div>
+		<div class="cell" style="bottom:72px;left:200px;"></div>
+		<div class="cell" style="bottom:107px;left:200px;"></div>
+		<div class="cell" style="bottom:142px;left:200px;"></div>
+		<div class="cell" style="bottom:177px;left:200px;"></div>
+
+		<div class="cell arrowy" style="bottom:2px;left:235px"></div>
+		<div class="cell yellow" style="bottom:37px;left:235px;"></div>
+		<div class="cell yellow" style="bottom:72px;left:235px;"></div>
+		<div class="cell yellow" style="bottom:107px;left:235px;"></div>
+		<div class="cell yellow" style="bottom:142px;left:235px;"></div>
+		<div class="cell yellow" style="bottom:177px;left:235px;"></div>
+
+		<div class="cell" style="bottom:2px;left:270px;"></div>
+		<div class="cell" style="bottom:37px;left:270px;"></div>
+		<div class="cell safe" style="bottom:72px;left:270px;"></div>
+		<div class="cell" style="bottom:107px;left:270px;"></div>
+		<div class="cell" style="bottom:142px;left:270px;"></div>
+		<div class="cell" style="bottom:177px;left:270px;"></div>
+		<!-- left vertical path -->
+		<div class="cell arrowr" style="top:233px;left:2px;"></div>
+		<div class="cell red" style="top:233px;left:37px;"></div>
+		<div class="cell red" style="top:233px;left:72px;"></div>
+		<div class="cell red" style="top:233px;left:107px;"></div>
+		<div class="cell red" style="top:233px;left:142px;"></div>
+		<div class="cell red" style="top:233px;left:177px;"></div>
+
+		<div class="cell" style="top:268px;left:2px;"></div>
+		<div class="cell" style="top:268px;left:37px;"></div>
+		<div class="cell safe" style="top:268px;left:72px;"></div>
+		<div class="cell" style="top:268px;left:107px;"></div>
+		<div class="cell" style="top:268px;left:142px;"></div>
+		<div class="cell" style="top:268px;left:177px;"></div>
+
+		<div class="cell" style="top:198px;left:2px;"></div>
+		<div class="cell red home" style="top:198px;left:37px;"></div>
+		<div class="cell" style="top:198px;left:72px;"></div>
+		<div class="cell " style="top:198px;left:107px;"></div>
+		<div class="cell" style="top:198px;left:142px;"></div>
+		<div class="cell" style="top:198px;left:177px;"></div>
+
+	</div>
+
+</body>
+</html>

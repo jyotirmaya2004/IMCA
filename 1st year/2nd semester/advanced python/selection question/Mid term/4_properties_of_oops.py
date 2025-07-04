@@ -13,7 +13,7 @@ Example Use: A BankAccount class where the balance is private and modified only 
 
 🔹 2. Abstraction
 Definition: Abstraction means showing only the essential features of an object and hiding the unnecessary details. It helps reduce complexity.
-
+//
 In Python:
 
 Implemented using abstract classes and methods from the abc module.
