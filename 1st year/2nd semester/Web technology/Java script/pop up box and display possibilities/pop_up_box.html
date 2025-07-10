@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popup and Display Demo</title>
+</head>
+<body>
+
+<h2 id="output">Output will be shown here</h2>
+
+<script>
+  // ----- Popup Boxes -----
+
+  // Alert box
+  alert("Welcome to the JavaScript Demo!");
+
+  // Confirm box
+  let isConfirmed = confirm("Do you want to proceed?");
+  if (isConfirmed) {
+    document.write("User confirmed.<br>");
+  } else {
+    document.write("User canceled.<br>");
+  }
+
+  // Prompt box
+  let name = prompt("What is your name?", "Guest");
+  document.write("Hello, " + name + "!<br>");
+
+  // ----- Display Possibilities -----
+
+  // Using innerHTML
+  document.getElementById("output").innerHTML += " Displayed using innerHTML<br>";
+
+  // Using console.log
+  console.log("This is logged in the browser console");
+
+  // Using window.alert
+  window.alert("This alert is shown using window.alert()");
+</script>
+
+</body>
+</html>
