@@ -1,135 +1,107 @@
+/* a double linked list containing character of string , Perform following operation
+(i) insert a character at the first position
+(ii) delete a character from any position of dll*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct Node {
+typedef struct node {
     char data;
-    struct Node* prev;
-    struct Node* next;
-} Node;
+    struct node *prev, *next;
+} DLL;
 
-typedef Node* NodePtr;
+void insert_end(DLL **head, char ch) {
+    DLL *new = (DLL *)malloc(sizeof(DLL));
+    new->data = ch;
+    new->prev = new->next = NULL;
 
-// Allocate a new node
-NodePtr getNode() {
-    NodePtr newNode = (NodePtr)malloc(sizeof(Node));
-    newNode->prev = NULL;
-    newNode->next = NULL;
-    return newNode;
+    if (!*head) {
+        *head = new;
+        return;
+    }
+
+    DLL *temp = *head;
+    while (temp->next) temp = temp->next;
+
+    temp->next = new;
+    new->prev = temp;
 }
 
-// CREATE-DL from a string
-NodePtr createDLFromString(char str[]) {
-    NodePtr head = NULL, tail = NULL;
-    int i = 0;
-    while (str[i] != '\0') {
-        NodePtr newNode = getNode();
-        newNode->data = str[i];
+void insert_front(DLL **head, char ch) {
+    DLL *new = (DLL *)malloc(sizeof(DLL));
+    new->data = ch;
+    new->prev = NULL;
+    new->next = *head;
+    if (*head) (*head)->prev = new;
+    *head = new;
+}
 
-        if (head == NULL) {
-            head = tail = newNode;
-        } else {
-            tail->next = newNode;
-            newNode->prev = tail;
-            tail = newNode;
-        }
+void delete_pos(DLL **head, int pos) {
+    if (!*head) {
+        printf("List is empty.\n");
+        return;
+    }
+
+    DLL *temp = *head;
+    int i = 0;
+
+    while (temp && i < pos) {
+        temp = temp->next;
         i++;
     }
-    return head;
+
+    if (!temp) {
+        printf("Invalid position.\n");
+        return;
+    }
+
+    if (temp->prev) temp->prev->next = temp->next;
+    else *head = temp->next;
+
+    if (temp->next) temp->next->prev = temp->prev;
+
+    free(temp);
 }
 
-// INSERT-DLIST-BEGIN
-NodePtr insertAtBeginning(NodePtr head, char val) {
-    NodePtr newNode = getNode();
-    newNode->data = val;
-    newNode->next = head;
-    newNode->prev = NULL;
-
-    if (head != NULL)
-        head->prev = newNode;
-
-    head = newNode;
-    return head;
-}
-
-// DELETE-DLIST-POS
-NodePtr deleteAtPosition(NodePtr head, int pos) {
-    if (head == NULL || pos <= 0) {
-        printf("Invalid Position\n");
-        return head;
-    }
-
-    NodePtr curr = head;
-
-    // Delete from beginning
-    if (pos == 1) {
-        head = head->next;
-        if (head != NULL)
-            head->prev = NULL;
-        free(curr);
-        return head;
-    }
-
-    int count = 1;
-    while (curr != NULL && count < pos) {
-        curr = curr->next;
-        count++;
-    }
-
-    if (curr == NULL) {
-        printf("Invalid Position\n");
-        return head;
-    }
-
-    NodePtr temp = curr->prev;
-    temp->next = curr->next;
-    if (curr->next != NULL)
-        curr->next->prev = temp;
-
-    free(curr);
-    return head;
-}
-
-// Display the list
-void displayList(NodePtr head) {
-    printf("Doubly Linked List: ");
-    while (head != NULL) {
+void display(DLL *head) {
+    printf("List: ");
+    while (head) {
         printf("%c <-> ", head->data);
         head = head->next;
     }
     printf("NULL\n");
 }
 
-// Main function
 int main() {
-    char str[100];
-    char ch;
+    DLL *head = NULL;
+    char str[100], ch;
     int pos;
-    NodePtr head = NULL;
 
-    // Step 1: Input string and create DLL
+    // Input full string
     printf("Enter a string: ");
-    scanf("%s", str);
-    head = createDLFromString(str);
+    scanf("%s", str);  // Use fgets() if you want spaces
 
-    printf("\nList after creation:\n");
-    displayList(head);
+    // Build DLL from string
+    for (int i = 0; str[i] != '\0'; i++) {
+        insert_end(&head, str[i]);
+    }
 
-    // Step 2: Insert at beginning
-    printf("\nEnter character to insert at beginning: ");
+    printf("\nDLL created from string:\n");
+    display(head);
+
+    // Insert a character at front
+    printf("\nEnter character to insert at front: ");
     scanf(" %c", &ch);
-    head = insertAtBeginning(head, ch);
+    insert_front(&head, ch);
+    printf("After inserting at front:\n");
+    display(head);
 
-    printf("List after inserting '%c' at beginning:\n", ch);
-    displayList(head);
-
-    // Step 3: Delete from position
-    printf("\nEnter position to delete: ");
+    // Delete a character from a position
+    printf("\nEnter position to delete (0-based index): ");
     scanf("%d", &pos);
-    head = deleteAtPosition(head, pos);
-
-    printf("List after deletion at position %d:\n", pos);
-    displayList(head);
+    delete_pos(&head, pos);
+    printf("After deletion:\n");
+    display(head);
 
     return 0;
 }
