@@ -63,5 +63,6 @@ int main() {
     display(&stack);
     printf("Top: %d\n", peek(&stack));
     push(&stack, 'A');
+    display(&stack);//it print the ASCII value of 'A'
     return 0;
 }
