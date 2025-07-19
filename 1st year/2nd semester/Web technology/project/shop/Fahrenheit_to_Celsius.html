@@ -1,65 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Convert Fahrenheit to Celsius:</title>
-	<style>
-		body{
-			background-color: aqua;
-		}
-		h1{
-			border: 2px solid black;
-			background-color: rgb(165, 165, 236);
-			text-shadow: 1px 1px 2px white;
-		}
-		.form1{
-			border:2px solid black;
-			align-items: center;
-			margin-left: 30%;
-			margin-right: 30%;
-			height: 500px;
-			background-color: rgb(156, 232, 232);
-			border-radius: 30px;
-		}
-		.input1{
-			margin-left: 130px;
-			margin-top: 120px;
-		}
-		.input2{
-			margin-left: 130px;
-			margin-top: 5px;
-		}
-		.button1{
-			margin-left: 130px;
-			margin-top: 5px;
-		}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert Fahrenheit to Celsius:</title>
+    <style>
+      body {
+        background-color: aqua;
+      }
+      h1 {
+        border: 2px solid black;
+        background-color: rgb(165, 165, 236);
+        text-shadow: 1px 1px 2px white;
+      }
+      .form1 {
+        border: 2px solid black;
+        align-items: center;
+        margin-left: 30%;
+        margin-right: 30%;
+        height: 500px;
+        background-color: rgb(156, 232, 232);
+        border-radius: 30px;
+      }
+      .input1 {
+        margin-left: 130px;
+        margin-top: 120px;
+      }
+      .input2 {
+        margin-left: 130px;
+        margin-top: 5px;
+      }
+      .button-15 {
+        margin-left: 130px;
+        margin-top: 5px;
+	  }
+        /* CSS */
+        .button-15 {
+          background-image: linear-gradient(#42a1ec, #0070c9);
+          border: 1px solid #0077cc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #ffffff;
+          cursor: pointer;
+          direction: ltr;
+          display: block;
+          font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons",
+            "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 17px;
+          font-weight: 400;
+          letter-spacing: -0.022em;
+          line-height: 1.47059;
+          min-width: 30px;
+          overflow: visible;
+          padding: 4px 15px;
+          text-align: center;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          white-space: nowrap;
+        }
 
-	</style>
-	<script>
-		function toCelsius() {
-			let fahrenheit=document.getElementById("number1").value;
-  			celsius=(5/9) * (fahrenheit-32);
-			document.getElementById("number2").value=celsius;
+        .button-15:disabled {
+          cursor: default;
+          opacity: 0.3;
+        }
 
-		}
-	</script>
-</head>
-<body>
-	<h1 style="text-align: center;">Fahrenheit to Celsius</h1>
-	<div class="form1">
-		<div class="input1">
-			<b>Enter fahrenheit value</b>
-			<input type="number" id="number1" size="36">
-			<br>
-		</div>
-		<div class="input2">
-			<b>Celsius value :</b>
-			<input type="number" id="number2" size="36">
-		</div>
-		<div class="button1">
-			<input type="button" value="Convert" id="button" onclick="toCelsius()">
-		</div>
-	</div>
-</body>
+        .button-15:hover {
+          background-image: linear-gradient(#51a9ee, #147bcd);
+          border-color: #1482d0;
+          text-decoration: none;
+        }
+
+        .button-15:active {
+          background-image: linear-gradient(#3d94d9, #0067b9);
+          border-color: #006dbc;
+          outline: none;
+        }
+
+        .button-15:focus {
+          box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+          outline: none;
+        }
+    </style>
+    <script>
+      function toCelsius() {
+        let fahrenheit = document.getElementById("number1").value;
+        celsius = (5 / 9) * (fahrenheit - 32);
+        document.getElementById("number2").value = celsius;
+      }
+    </script>
+  </head>
+  <body>
+    <h1 style="text-align: center">Fahrenheit to Celsius</h1>
+    <div class="form1">
+      <div class="input1">
+        <b>Enter fahrenheit value</b>
+        <input type="number" id="number1" size="36" />
+        <br />
+      </div>
+      <div class="input2">
+        <b>Celsius value :</b>
+        <input type="number" id="number2" size="36" />
+      </div>
+      <div class="button1">
+        <input
+          type="button"
+          value="Convert"
+          id="button-15"
+          class="button-15"
+          role="button"
+          onclick="toCelsius()"
+        />
+      </div>
+    </div>
+  </body>
 </html>
