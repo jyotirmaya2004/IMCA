@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Convert Fahrenheit to Celsius:</title>
+	<style>
+		body{
+			background-color: aqua;
+		}
+		h1{
+			border: 2px solid black;
+			background-color: rgb(165, 165, 236);
+			text-shadow: 1px 1px 2px white;
+		}
+		.form1{
+			border:2px solid black;
+			align-items: center;
+			margin-left: 30%;
+			margin-right: 30%;
+			height: 500px;
+			background-color: rgb(156, 232, 232);
+			border-radius: 30px;
+		}
+		.input1{
+			margin-left: 130px;
+			margin-top: 120px;
+		}
+		.input2{
+			margin-left: 130px;
+			margin-top: 5px;
+		}
+		.button1{
+			margin-left: 130px;
+			margin-top: 5px;
+		}
+
+	</style>
+	<script>
+		function toCelsius() {
+			let fahrenheit=document.getElementById("number1").value;
+  			celsius=(5/9) * (fahrenheit-32);
+			document.getElementById("number2").value=celsius;
+
+		}
+	</script>
+</head>
+<body>
+	<h1 style="text-align: center;">Fahrenheit to Celsius</h1>
+	<div class="form1">
+		<div class="input1">
+			<b>Enter fahrenheit value</b>
+			<input type="number" id="number1" size="36">
+			<br>
+		</div>
+		<div class="input2">
+			<b>Celsius value :</b>
+			<input type="number" id="number2" size="36">
+		</div>
+		<div class="button1">
+			<input type="button" value="Convert" id="button" onclick="toCelsius()">
+		</div>
+	</div>
+</body>
+</html>
