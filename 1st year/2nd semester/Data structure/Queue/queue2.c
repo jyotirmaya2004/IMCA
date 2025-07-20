@@ -40,7 +40,7 @@ void insert_Queue(queue *qu,int val)
 	newnode->info = val;
 	newnode->next = NULL;
 
-	if( qu->rear == NULL ) //STACK EMPTY
+	if( qu->rear == NULL ) //QUEUE EMPTY
 	{
 		qu->rear = qu->front = newnode;
 		printf("\nInsertion SUCCESSFULL...");
@@ -81,7 +81,6 @@ int delete_Queue(queue *qu)
 //TO TRAVERSE THE QUEUE
 int traverse_LQ(queue *qu)
 {
-	int popval = 0;
 	node *temp = qu->front;
 	if(qu->front == NULL )
 	{
