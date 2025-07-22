@@ -1,150 +1,171 @@
-#include<stdio.h>
-#include<stdlib.h>
-typedef struct polynomial
-{
-	int coef;
-	int exp;
-	struct polynomial *next;
-}poly;
-poly CreateList(poly*);
-poly AddPoly(poly*,poly*);
-void extra(poly*,poly*);
-void display(poly*);
-main()
-{
-	poly *L1,*L2,*L3;
-	char ch='1';
-		while(ch>='1'&&ch<='3')
-		{
-			printf("\n1.Create");
-			printf("\n2.Addition");
-			printf("\n3.Quite");
-			printf("\nEntrer a choice");
-			fflush(stdin);
-			ch=getchar();
-			switch (ch)
-			{
-			case '1':
-				L1=L2=NULL;
-				printf("\nCreate the first list of polynomial- ");
-				L1=CreateList(L1);
-				printf("\nCreate the secomd list of polynomial- ");
-				L2=CreateList(L2);
-				printf("\nDisplay the first polynomial :");
-				display(L1);
-				printf("\nDisplay the Second polynomial :");
-				display(L2);
-				break;
-			case '2':
-				L3=NULL;
-				L3=AddPoly(L1,L2);
-				display(L1);
-				display(L2);
-				display(L3);
+#include <stdio.h>
+#include <stdlib.h>
 
-				break;
-			case '3':
-				exit(0);
-				break;
+typedef struct polynomial {
+    int coef;
+    int exp;
+    struct polynomial *next;
+} poly;
 
-			default:
-				printf("wrong choice");
-				break;
-			}
-		}
+poly *create_list(poly *);
+poly *add_poly(poly *, poly *);
+void extra(poly *, poly *);
+void display(poly *);
+
+int main() {
+    poly *l1 = NULL, *l2 = NULL, *l3 = NULL;
+    char ch = '1';
+
+    while (ch >= '1' && ch <= '3') {
+        printf("\n1 - Create\n");
+        printf("2 - Addition\n");
+        printf("3 - Quit\n");
+        printf("Enter a choice: ");
+        scanf(" %c", &ch);
+
+        switch (ch) {
+            case '1':
+                l1 = l2 = NULL;
+                printf("Create the first polynomial:\n");
+                l1 = create_list(l1);
+                printf("Create the second polynomial:\n");
+                l2 = create_list(l2);
+                printf("First Polynomial: ");
+                display(l1);
+                printf("Second Polynomial: ");
+                display(l2);
+                break;
+
+            case '2':
+                printf("Result of Addition:\n");
+                l3 = add_poly(l1, l2);
+                printf("First:   ");
+                display(l1);
+                printf("Second:  ");
+                display(l2);
+                printf("Result:  ");
+                display(l3);
+                break;
+
+            case '3':
+                exit(0);
+                break;
+
+            default:
+                printf("Invalid choice!\n");
+        }
+    }
+    return 0;
 }
-poly CreateList(poly *f)
-{
-	poly *curr,*prev;
-	char ch='Y';
-	while(ch=='y'||ch=='Y')
-	{
-		curr=(poly*)malloc(sizeof(poly));
-		if(curr==NULL)
-		{
-			printf("Failed");
-			exit(0);
-		}
-		curr->next=NULL;
-		printf("\nEnter the coefficient : ");
-		scanf("%d",&curr->coef);
-		printf("\nEnter the exponet : ");
-		scanf("%d",&curr->exp);
-		if(f==NULL)
-		{
-			f=curr;
-		}
-		else
-		 prev->next=curr;
-		prev=curr;
-		printf("\nDo you want to continue : ");
-		fflush(stdin);
-		scanf("%c",&ch);
 
+poly *create_list(poly *f) {
+    poly *curr, *prev = NULL;
+    char ch = 'y';
+    while (ch == 'y' || ch == 'Y') {
+        curr = (poly *)malloc(sizeof(poly));
+        if (!curr) {
+            printf("Memory allocation failed!\n");
+            return f;
+        }
+        curr->next = NULL;
+        printf("Enter coefficient: ");
+        scanf("%d", &curr->coef);
+        printf("Enter exponent: ");
+        scanf("%d", &curr->exp);
 
-	}
-	return f;
+        if (f == NULL)
+            f = curr;
+        else
+            prev->next = curr;
+        prev = curr;
+
+        printf("Add another term? (y/n): ");
+        scanf(" %c", &ch);
+    }
+    return f;
 }
-poly AddPoly(poly *L1,poly *L2)
-{
-	poly *curr,*prev,*p1,*p2,*p3=NULL;
-	p1=L1;
-	p2=L2;
-	while (p1!=NULL&&p2!=NULL)
-	{
-		if(p1->coef+p2->coef==0)
-		{
-			p1=p1->next;
-			p2=p2->next;
-			continue;
-		}
 
-	}
-	curr=(poly*)malloc(sizeof(poly));
-		if(curr==NULL)
-		{
-			printf("Failed");
-			exit(0);
-		}
-	curr->next=NULL;
-	if(p3==NULL)
-		{
-			p3=curr;
-			prev=curr;
-		}
-		else{
-			prev->next=curr;
-			prev=curr;
-		}
-		if(p1->exp==p2->exp)
-		{
-			curr->coef=p1->coef+p2->coef;
-			curr->exp=p1->exp;
-			p1=p1->next;
-			p2=p2->next;
-		}
-		else if (p1->exp<p2->exp)
-		{
-			curr->coef=p2->coef;
-			curr->exp=p2->exp;
-			p2=p2->next;
-
-		}
-		else if (p1->exp>p2->exp)
-		{
-			curr->coef=p1->coef;
-			curr->exp=p1->exp;
-			p1=p1->next;
-
-		}
-		if(p1==NULL)
-		extra(prev, p2);
-		if(p1==NULL)
-		extra(prev, p1);
-		return *p3;
-
+void display(poly *ptr) {
+    while (ptr != NULL) {
+        printf("%dx^%d", ptr->coef, ptr->exp);
+        ptr = ptr->next;
+        if (ptr != NULL)
+            printf(" + ");
+    }
+    printf("\n");
 }
-void extra(poly*prev,poly*p)
-{
 
+poly *add_poly(poly *l1, poly *l2) {
+    poly *p1 = l1, *p2 = l2, *p3 = NULL, *curr = NULL, *prev = NULL;
+
+    while (p1 != NULL && p2 != NULL) {
+        if (p1->exp == p2->exp) {
+            int sum = p1->coef + p2->coef;
+            if (sum != 0) {
+                curr = (poly *)malloc(sizeof(poly));
+                curr->coef = sum;
+                curr->exp = p1->exp;
+                curr->next = NULL;
+
+                if (!p3)
+                    p3 = curr;
+                else
+                    prev->next = curr;
+
+                prev = curr;
+            }
+            p1 = p1->next;
+            p2 = p2->next;
+        }
+        else if (p1->exp > p2->exp) {
+            curr = (poly *)malloc(sizeof(poly));
+            curr->coef = p1->coef;
+            curr->exp = p1->exp;
+            curr->next = NULL;
+
+            if (!p3)
+                p3 = curr;
+            else
+                prev->next = curr;
+            prev = curr;
+
+            p1 = p1->next;
+        }
+        else {
+            curr = (poly *)malloc(sizeof(poly));
+            curr->coef = p2->coef;
+            curr->exp = p2->exp;
+            curr->next = NULL;
+
+            if (!p3)
+                p3 = curr;
+            else
+                prev->next = curr;
+            prev = curr;
+
+            p2 = p2->next;
+        }
+    }
+
+    // Append remaining terms
+    if (p1 != NULL)
+        extra(prev, p1);
+    if (p2 != NULL)
+        extra(prev, p2);
+
+    return p3;
+}
+
+void extra(poly *prev, poly *p) {
+    poly *temp;
+    while (p != NULL) {
+        temp = (poly *)malloc(sizeof(poly));
+        if (!temp) return;
+        temp->coef = p->coef;
+        temp->exp = p->exp;
+        temp->next = NULL;
+        prev->next = temp;
+        prev = temp;
+        p = p->next;
+    }
 }
