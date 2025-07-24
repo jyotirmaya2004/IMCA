@@ -3,7 +3,7 @@
 #include<ctype.h>
 #include<string.h>
 char stack[100];
-int top=-1,size;\
+int top=-1,size;
 int isOperator(char item)
 {
 	if(item=='+'||item=='-'||item=='*'||item=='^'||item=='/')
