@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Circle Area from Coordinates</title>
+</head>
+<body>
+  <h3>Area of Circle from Centre & Circumference Point</h3>
+
+  <label>Centre X: <input id="cx" type="number" step="any"></label><br>
+  <label>Centre Y: <input id="cy" type="number" step="any"></label><br>
+  <label>Point X:  <input id="px" type="number" step="any"></label><br>
+  <label>Point Y:  <input id="py" type="number" step="any"></label><br><br>
+
+  <button onclick="calculateArea()">Calculate Area</button><br><br>
+
+  <label>Area: <input id="area" type="text" readonly></label>
+
+  <script>
+    function calculateArea() {
+      const cx = parseFloat(document.getElementById('cx').value);
+      const cy = parseFloat(document.getElementById('cy').value);
+      const px = parseFloat(document.getElementById('px').value);
+      const py = parseFloat(document.getElementById('py').value);
+
+      if ([cx, cy, px, py].some(Number.isNaN)) {
+        alert('Please enter all four coordinates.');
+        return;
+      }
+
+      const r = Math.hypot(px - cx, py - cy);          // radius = distance between points
+      const area = Math.PI * r * r;                    // πr²
+
+      document.getElementById('area').value = area.toFixed(4);
+    }
+  </script>
+</body>
+</html>

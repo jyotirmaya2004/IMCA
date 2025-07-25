@@ -1,28 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Node {
+/* ---- Function prototypes ---- */
+struct Node;
+typedef struct Node Node;
+typedef struct Stack Stack;
+
+void init(Stack* s);
+void push(Stack* s, int value);
+int  pop(Stack* s);
+int  peek(Stack* s);
+void display(Stack* s);
+void reverse(Stack* s);
+static void insertAtBottom(Stack* s, int value);  // helper
+
+/* ---- Data structures ---- */
+struct Node {
     int data;
-    struct Node* next;
-} Node;
+    Node* next;
+};
 
-typedef struct Stack {
+struct Stack {
     Node* top;
-} Stack;
+};
 
+/* ---- Stack functions ---- */
 void init(Stack* s) {
     s->top = NULL;
 }
 
-void reverse(Stack* s) {
-    if (s->top == NULL) return;
-    int temp = pop(s);
-    reverse(s);
-    insertBottom(s, temp);
-}
-
 void push(Stack* s, int value) {
     Node* newNode = (Node*) malloc(sizeof(Node));
+    if (!newNode) {
+        perror("malloc failed");
+        exit(EXIT_FAILURE);
+    }
     newNode->data = value;
     newNode->next = s->top;
     s->top = newNode;
@@ -57,17 +69,45 @@ void display(Stack* s) {
     printf("NULL\n");
 }
 
+/* ---- Correct reverse ---- */
+static void insertAtBottom(Stack* s, int value) {
+    if (s->top == NULL) {
+        push(s, value);
+        return;
+    }
+    int temp = pop(s);
+    insertAtBottom(s, value);
+    push(s, temp);
+}
+
+void reverse(Stack* s) {
+    if (s->top == NULL) return;
+    int temp = pop(s);
+    reverse(s);
+    insertAtBottom(s, temp);
+}
+
+/* ---- driver ---- */
 int main() {
     Stack stack;
     init(&stack);
+
     push(&stack, 10);
     push(&stack, 20);
     push(&stack, 30);
-    display(&stack);
-    printf("Popped: %d\n", pop(&stack));
-    display(&stack);
-    printf("Top: %d\n", peek(&stack));
+
+    printf("Original: ");
+    display(&stack);        // 30 -> 20 -> 10 -> NULL
+
+    printf("Popped: %d\n", pop(&stack)); // 30
+    printf("After pop: ");
+    display(&stack);        // 20 -> 10 -> NULL
+
+    printf("Top: %d\n", peek(&stack));   // 20
+
     reverse(&stack);
-display(&stack);
+    printf("Reversed: ");
+    display(&stack);        // 10 -> 20 -> NULL
+
     return 0;
 }
