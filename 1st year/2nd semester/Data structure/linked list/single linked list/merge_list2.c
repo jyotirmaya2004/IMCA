@@ -65,59 +65,23 @@ void create(sll **list1)
 		traverse(*list1)->next=curr;
 	}
 }
-void merge(sll *n1,sll *n2,sll **n3)
-{
-	sll *node;
-	if(n1==NULL)
-	{
-		printf("\nFirst List not found !!!");
-		return;
-	}
-	if(n2==NULL)
-	{
-		printf("\nSecond List not found !!!");
-		return;
-	}
-	node=(sll*)malloc(sizeof(sll));
-	if(node==NULL)
-	{
-		printf("\nMemory allocation failed !!!");
-		return;
-	}
-	node->data=n1->data;
-	node->next=NULL;
-	n1=n1->next;
-	*n3=node;
+void merge(sll *n1, sll *n2, sll **n3) {
+    if (n1 == NULL) {
+        *n3 = n2;
+        return;
+    }
+    if (n2 == NULL) {
+        *n3 = n1;
+        return;
+    }
 
-	while(n1!=NULL)
-	{
-		node->next=(sll*)malloc(sizeof(sll));
-		if(node==NULL)
-		{
-			printf("\nmemory allocation failed !!!");
-			return;
-		}
-		node=node->next;
-		node->data=n1->data;
-		node->next=NULL;
-		n1=n1->next;
-
-	}
-	while(n2!=NULL)
-	{
-		node->next=(sll*)malloc(sizeof(sll));
-		if(node==NULL)
-		{
-			printf("\nmemory allocation failed !!!");
-			return;
-		}
-		node=node->next;
-		node->data=n2->data;
-		node->next=NULL;
-		n2=n2->next;
-	}
-
+    *n3 = n1;  // Start with first list
+    while (n1->next != NULL) {
+        n1 = n1->next;
+    }
+    n1->next = n2;  // Link second list to the end of first list
 }
+
 sll *traverse(sll *node)
 {
 	sll* prev=NULL;
