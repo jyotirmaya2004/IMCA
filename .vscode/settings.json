@@ -1,5 +1,7 @@
 {
 	"files.associations": {
-		"cmath": "cpp"
+		"*.c": "c",
+		"cmath": "cpp",
+		"iostream": "cpp"
 	}
 }
