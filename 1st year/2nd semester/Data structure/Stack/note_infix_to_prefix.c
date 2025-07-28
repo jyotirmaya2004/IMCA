@@ -38,7 +38,7 @@ int isOperand(char c){ return isalnum((unsigned char)c); }
 // Function to return precedence of operators
 int precedence(char x) {
     if (x == '+' || x == '-') return 1;
-    if (x == '*' || x == '/') return 2;
+    if (x == '*' || x == '/'||x=='%') return 2;
     if (x == '^') return 3;
     return 0;
 }
