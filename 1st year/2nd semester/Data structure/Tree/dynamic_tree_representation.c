@@ -32,7 +32,7 @@ void build_tree(D_tree* root,char ch)
 			printf("Enter left child : ");
 			getchar();
 			scanf("%c",&l_child);
-			bulid_tree(root->l,l_child);
+			build_tree(root->l,l_child);
 		}
 		printf("\n%c has right child(y/n) : ",root->data);
 		getchar();
@@ -43,7 +43,7 @@ void build_tree(D_tree* root,char ch)
 			printf("Enter right child : ");
 			getchar();
 			scanf("%c",&r_child);
-			bulid_tree(root->r,r_child);
+			build_tree(root->r,r_child);
 		}
 
 	}
@@ -82,4 +82,14 @@ int main()
 {
 	char ch;
 	D_tree *root=get_node();
+	printf("Enter root node : ");
+	scanf("%c",&ch);
+	build_tree(root,ch);
+	printf("\nThe Elements display in preorder : \n");
+	pretraversal(root);
+	printf("\nThe Elements display in inorder : \n");
+	intraversal(root);
+	printf("\nThe Elements display in postorder : \n");
+	posttraversal(root);
+
 }
