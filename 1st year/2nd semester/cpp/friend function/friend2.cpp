@@ -12,16 +12,16 @@ public:
         width = w;
     }
 
-    friend void showLength(Box b);  // 1st friend function
-    friend void showWidth(Box b);   // 2nd friend function
+    friend void showLength(Box b);
+    friend void showWidth(Box b);   
 };
 
-// Friend function 1
+
 void showLength(Box b) {
     cout << "Length is: " << b.length << endl;
 }
 
-// Friend function 2
+
 void showWidth(Box b) {
     cout << "Width is: " << b.width << endl;
 }
