@@ -10,7 +10,7 @@ public:
     }
 };
 
-// Definition outside the class
+//Definition outside the class
 int Counter::count = 0;
 
 int main() {
