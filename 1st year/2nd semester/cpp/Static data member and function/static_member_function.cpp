@@ -9,7 +9,7 @@ public:
     }
 };
 
-// Definition of static member
+//Definition of static member
 int Math::x = 50;
 
 int main() {
