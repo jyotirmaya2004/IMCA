@@ -6,7 +6,6 @@ int main() {
     ofstream fout("sample.txt");
     fout << "Hello, file stream!";
     fout.close();
-
     ifstream fin("sample.txt");
     string line;
     getline(fin, line);
