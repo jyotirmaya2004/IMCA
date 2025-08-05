@@ -14,7 +14,6 @@ class Book {
         cout << "Title: " << title << endl;
     }
 };
-
 int main() {
     Book b;
     b.display();
