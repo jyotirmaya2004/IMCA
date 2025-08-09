@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/submit-employee-data" method="post">
+  <table>
+    <tr>
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" id="name" name="name" required></td>
+    </tr>
+    <tr>
+      <td><label for="idNo">ID No:</label></td>
+      <td><input type="text" id="idNo" name="idNo" required></td>
+    </tr>
+    <tr>
+      <td><label for="designation">Designation:</label></td>
+      <td><input type="text" id="designation" name="designation" required></td>
+    </tr>
+    <tr>
+      <td><label for="dob">Date of Birth:</label></td>
+      <td><input type="date" id="dob" name="dob" required></td>
+    </tr>
+    <tr>
+      <td><label for="gender">Gender:</label></td>
+      <td>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="department">Department:</label></td>
+      <td>
+        <select id="department" name="department" required>
+          <option value="">Select Department</option>
+          <option value="HR">HR</option>
+          <option value="Marketing">Marketing</option>
+          <option value="IT">IT</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="salary">Salary:</label></td>
+      <td><input type="number" id="salary" name="salary" required></td>
+    </tr>
+    <tr>
+      <td><label for="deductionPercentage">Deduction Percentage:</label></td>
+      <td><input type="number" id="deductionPercentage" name="deductionPercentage" required></td>
+    </tr>
+    <tr>
+      <td><label for="salaryAfterDeduction">Salary after Deduction:</label></td>
+      <td><input type="number" id="salaryAfterDeduction" name="salaryAfterDeduction" readonly></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </td>
+    </tr>
+  </table>
+</form>
+
+
+</body>
+</html>
