@@ -4,6 +4,8 @@ def divide(x, y):
     return x / y
 
 try:
-    print(divide(10, 0))
+    print(divide(10, "a"))
 except ValueError as e:
-    print(e) 
+    print(e)
+except Exception as e:
+    print(e)
