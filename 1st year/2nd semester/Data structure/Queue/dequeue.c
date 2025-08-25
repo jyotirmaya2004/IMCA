@@ -11,6 +11,7 @@ typedef struct {
 void initDeque(Deque *dq) {
     dq->front = -1;
     dq->rear = -1;
+    
 }
 
 int isFull(Deque *dq) {
