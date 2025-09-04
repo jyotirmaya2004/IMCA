@@ -1,0 +1,13 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #c2d6e3, #9192ed);
+    cursor: none;
+}
+
+#my-cursor {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+}
